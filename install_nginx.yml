@@ -1,0 +1,14 @@
+---
+- name: Install Nginx on localhost
+  hosts: localhost
+  become: true
+  tasks:
+    - name: Install Nginx package
+      package:
+        name: nginx
+        state: present
+
+    - name: Start Nginx service
+      service:
+        name: nginx
+        state: started
